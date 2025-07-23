@@ -1,0 +1,16 @@
+# **ansible-auto.publ**
+
+Welcome to the **`ansible-auto.publ`** repository! 🎉
+
+This repository is **public** and serves as a central place for showcasing some of the core Ansible automation projects. 
+While you can explore the contents here, please note that certain detailed configurations, sensitive data, or extended features might be contained in **private repositories**.
+
+## 🚀 **Repository Overview**
+
+In this public repository, you'll find the following:
+
+- **Public Ansible Playbooks**: Various automation scripts to help with infrastructure provisioning, management, and application deployment.
+- **Example Configurations**: Generic configurations for different environments (e.g., dev, staging, production).
+- **Project-specific Modules**: Modular playbooks for specific tasks (e.g., setting up a web server, configuring databases, etc.).
+
+> **Note**: This repository **only** contains examples, basic automation scripts, and public resources. 
