@@ -1,13 +1,15 @@
-# Ansible Automation Public
+# ansible-auto
+# ansible-auto
 
-Automation playbooks for server and application management using Ansible.
+This repository contains Ansible automation playbooks and roles.
 
-## Contents
+- `playbooks/setup-webserver.yml` - sets up nginx webserver on hosts.
+- Role `common` installs nginx and customizes the message of the day.
 
-- Server provisioning  
-- Package installation  
-- Configuration management
+## Usage
 
----
+Run:
 
-*Public repository for automation scripts.*
+```bash
+ansible-playbook -i inventory.ini playbooks/setup-webserver.yml
+
