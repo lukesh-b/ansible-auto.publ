@@ -22,3 +22,23 @@ This repository contains an Ansible playbook for automating the installation and
 ├── hosts             # Static inventory defining host groups
 └── README.md         # Project documentation (this file)
 ```
+
+🚀 How to Use
+1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/ansible-services-playbook.git
+cd ansible-services-playbook
+```
+2. Review or Edit the Inventory
+Note:Update hosts to reflect your infrastructure.
+
+3. Run the Playbook
+```bash
+ansible-playbook -i hosts services.yml
+Make sure Ansible is installed and SSH access is configured to your target hosts.
+```
+
+✅ Requirements
+Ansible 2.9+ (or later)
+RHEL/CentOS-based systems with yum package manager
+sudo privileges on target nodes
