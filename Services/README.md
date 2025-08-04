@@ -27,7 +27,7 @@ This repository contains an Ansible playbook for automating the installation and
 1. Clone the whole Repository
 ```bash
 git https://github.com/lukesh-b/ansible-auto.publ.git
-cd Services
+cd ansible-auto.publ/Services
 ```
 2. Review or Edit the Inventory
 - Update hosts to reflect your infrastructure.
