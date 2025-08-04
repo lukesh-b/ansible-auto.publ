@@ -30,7 +30,9 @@ git https://github.com/lukesh-b/ansible-auto.publ.git
 cd ansible-auto.publ/Services
 ```
 2. Review or Edit the Inventory
-- Update hosts to reflect your infrastructure.
+```yaml
+Update hosts to reflect your infrastructure.
+```
 
 3. Run the Playbook
 ```bash
