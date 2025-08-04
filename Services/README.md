@@ -42,3 +42,10 @@ Make sure Ansible is installed and SSH access is configured to your target hosts
 Ansible 2.9+ (or later)
 RHEL/CentOS-based systems with yum package manager
 sudo privileges on target nodes
+
+📝 Notes
+```yaml
+Handlers are only triggered if the related task causes a change.
+The systemd module is used for MariaDB to ensure service compatibility on systemd-based systems.
+Modify the playbook if you want to support other distributions (e.g., use apt for Debian/Ubuntu).
+```
