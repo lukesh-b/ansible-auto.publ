@@ -34,7 +34,7 @@ cd ansible-auto.publ/Services
 
 3. Run the Playbook
 ```bash
-ansible-playbook -i hosts services.yml
+ansible-playbook -i hosts.ini services.yml
 # Make sure Ansible is installed and SSH access is configured to your target hosts.
 ```
 
