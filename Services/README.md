@@ -49,3 +49,6 @@ Handlers are only triggered if the related task causes a change.
 The systemd module is used for MariaDB to ensure service compatibility on systemd-based systems.
 Modify the playbook if you want to support other distributions (e.g., use apt for Debian/Ubuntu).
 ```
+
+🛡️ License
+MIT License. See LICENSE file for details.
