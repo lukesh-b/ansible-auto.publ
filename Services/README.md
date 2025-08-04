@@ -30,7 +30,7 @@ git clone https://github.com/yourusername/ansible-services-playbook.git
 cd ansible-services-playbook
 ```
 2. Review or Edit the Inventory
-Note:Update hosts to reflect your infrastructure.
+- Update hosts to reflect your infrastructure.
 
 3. Run the Playbook
 ```bash
