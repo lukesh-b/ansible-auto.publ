@@ -1,0 +1,32 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Grab /dev/sdb info
+      parted:
+        device: /dev/sdb
+        unit: MiB
+      register: sdb_info
+
+    - name: Display /dev/sdb partition info
+      debug:
+        msg: "{{ sdb_info.partitions }}"
+
+    - name: Create extended partition on /dev/sdb
+      parted:
+        device: /dev/sdb
+        part_type: extended
+        part_start: "{{ sdb_info.partitions[0].end + 1 }}MiB"
+        part_end: 100%
+        number: 2
+        state: present
+
+    - name: Create 500 MiB logical partition inside extended partition
+      parted:
+        device: /dev/sdb
+        part_type: logical
+        part_start: "{{ sdb_info.partitions[0].end + 2 }}MiB"
+        part_end: "{{ sdb_info.partitions[0].end + 502 }}MiB"
+        number: 5
+        state: present
