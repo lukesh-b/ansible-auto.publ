@@ -16,11 +16,11 @@ An Ansible project to create a 2GB primary partition on `/dev/sdb` and format it
 - `/dev/sdb` available and unused on all target machines
 - Sudo privileges on the target machines
 
+## 🚀 Usages
+
 ###
 - `create-primary-partition.yml`:
 The Ansible playbook to partition and format the disk.
-
-## 🚀 Usage
 
 ```bash
 ansible-playbook -i hosts create-primary-partition.yml
@@ -33,7 +33,6 @@ This playbook extends the `/dev/sdb` disk by:
 1. Creating an **extended partition** (partition 2) starting just after the end of `/dev/sdb1`
 2. Creating a **500 MiB logical partition** (partition 5) within the extended partition
 
-🔧 **Usage**:
-
 ```bash
 ansible-playbook -i hosts create-logical-partition.yml
+```
