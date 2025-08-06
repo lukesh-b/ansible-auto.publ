@@ -27,7 +27,7 @@ ansible-playbook -i hosts create-primary-partition.yml
 ```
 
 ###
-`create-logical-partition.yml`
+- `create-logical-partition.yml`
 This playbook extends the `/dev/sdb` disk by:
 
 1. Creating an **extended partition** (partition 2) starting just after the end of `/dev/sdb1`
