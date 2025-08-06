@@ -1,0 +1,26 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+
+    - name: Grab /dev/sdb info
+      parted:
+        device: /dev/sdb
+      register: sdb_info
+
+    - name: Display /dev/sdb info
+      debug:
+        msg: "{{ sdb_info }}"
+
+    - name: Create 2 GB primary partition
+      parted:
+        device: /dev/sdb
+        number: 1
+        state: present
+        part_end: 2GiB
+
+    - name: Create ext4 file system
+      filesystem:
+        fstype: ext4
+        device: /dev/sdb1
