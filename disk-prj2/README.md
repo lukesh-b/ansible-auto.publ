@@ -15,6 +15,4 @@ Warning: This alters disk partitions. Ensure the disks and partitions are backed
 Each module may include its own LICENSE file. If not, the default license for this repository is:
 MIT License
 
-Authors:
-lukesh-b
 
