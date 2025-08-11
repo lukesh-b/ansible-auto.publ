@@ -28,7 +28,7 @@ Run the playbook:
 ansible-playbook -i hosts full_lvm.yml
 ```
 
-NOTE:This playbook modifies disk partitions and filesystems. Ensure to use as a test or backup the existing partition first
+ NOTE: This playbook modifies disk partitions and filesystems. Ensure to use as a test or backup the existing partition first
 
 ## License
 This project is licensed under the MIT License.
