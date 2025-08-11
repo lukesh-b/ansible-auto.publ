@@ -3,11 +3,12 @@
 This repository contains an Ansible playbook that automates the setup of disk partitioning, LVM configuration, and filesystem mounting on a target group of database servers (`dbservers`).
 
 ##  Project Structure
+```yaml
 disk-prj3/
 ├── disk_lvm_complete_setup/
 │ ├── full_lvm.yml # Main Ansible playbook
 │ └── hosts # Inventory file
-
+```
 
 ##  Description
 
