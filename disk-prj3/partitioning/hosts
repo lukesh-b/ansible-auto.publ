@@ -1,0 +1,14 @@
+[webservers]
+host1
+host2
+
+[loadbalancers]
+host3
+
+[dbservers]
+host4
+
+[linux:children]
+webservers
+loadbalancers
+dbservers

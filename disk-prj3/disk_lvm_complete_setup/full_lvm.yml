@@ -1,0 +1,77 @@
+---
+- hosts: dbservers
+
+  tasks:
+    - name: configure primary part
+      parted:
+        device: /dev/sdc
+        part_type: primary
+        part_end: 2GiB
+        state: present
+        number: 1
+
+    - name: grab sdc info
+      parted:
+        state: info
+        device: /dev/sdc
+        unit: MiB
+      register: sdc_info
+
+    - name: display disk info
+      debug:
+        msg: "{{ sdc_info }}"
+
+    - name: configure extended
+      parted:
+        device: /dev/sdc
+        part_type: extended
+        part_start: "{{sdc_info.partitions[0].end +2}}MiB"
+        number: 2
+        state: present
+
+    - name: grab sdc info again
+      parted:
+        state: info
+        device: /dev/sdc
+        unit: MiB
+      register: sdc_info1
+
+    - name: display disk info
+      debug:
+        msg: "{{ sdc_info1 }}"
+
+    - name: Configure 2 GiB logical volume
+      parted:
+        device: /dev/sdc
+        part_type: logical
+        part_start: "{{sdc_info1.partitions[1].begin + 2}}MiB"
+        part_end: "{{ sdc_info1.partitions[1].begin + 2050}}MiB"
+        number: 5
+        state: present
+
+    - name: configure volume group
+      lvg:
+        vg: vgdata
+        pvs: /dev/sdc5
+
+    - name: configure lvm
+      lvol:
+        vg: vgdata
+        lv: lvdata
+        size: 1024m
+
+    - name: configure filesystem
+      filesystem:
+        dev: /dev/vgdata/lvdata
+        fstype: xfs
+
+    - name: mounting
+      mount:
+        path: /mnt/dbdata
+        src: /dev/vgdata/lvdata
+        state: mounted 
+        fstype: xfs
+        state: present
+          
+
+

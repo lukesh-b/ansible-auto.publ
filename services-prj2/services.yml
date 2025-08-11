@@ -1,0 +1,35 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Install httpd
+      yum:
+        name: httpd
+        state: present
+      when: "'webservers' in group_names"
+      notify: start httpd
+
+    - name: Install MariaDB packages
+      yum:
+        name: "{{ item }}"
+        state: present
+      when: "'dbservers' in group_names"
+      loop:
+        - mariadb-server
+        - mariadb-common
+      notify: start mariadb
+
+  handlers:
+    - name: start httpd
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+      # confirming works with systemd
+
+    - name: start mariadb
+      systemd:
+        name: mariadb
+        enabled: yes
+        state: started
