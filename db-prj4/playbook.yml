@@ -1,0 +1,33 @@
+---
+- name: Setup MariaDB
+  hosts: mariadb_servers
+  become: true
+  tasks:
+    - name: Install and start MariaDB
+      apt:
+        name: mariadb-server
+        state: present
+        update_cache: yes
+
+    - name: Enable and start MariaDB service
+      service:
+        name: mariadb
+        enabled: true
+        state: started
+
+- name: Setup PostgreSQL
+  hosts: postgres_servers
+  become: true
+  tasks:
+    - name: Install and start PostgreSQL
+      apt:
+        name: postgresql
+        state: present
+        update_cache: yes
+
+    - name: Enable and start PostgreSQL service
+      service:
+        name: postgresql
+        enabled: true
+        state: started
+

@@ -1,0 +1,9 @@
+[mariadb_servers]
+db-mariadb ansible_host=192.168.1.10
+
+[postgres_servers]
+db-postgres ansible_host=192.168.1.11
+
+[all:vars]
+ansible_user=admin
+ansible_become=true
