@@ -14,8 +14,7 @@ This repository contains an Ansible playbook for automating the installation and
 
 ---
 
-## 📁 Files
-
+## Dir Structure
 ```bash
 .
 ├── services.yml      # Main Ansible playbook
@@ -23,7 +22,7 @@ This repository contains an Ansible playbook for automating the installation and
 └── README.md         # Project documentation (this file)
 ```
 
-🚀 How to Use
+### How to Use
 1. Clone the whole Repository
 ```bash
 git https://github.com/lukesh-b/ansible-auto.publ.git
@@ -40,17 +39,14 @@ ansible-playbook -i hosts.ini services.yml
 # Make sure Ansible is installed and SSH access is configured to your target hosts.
 ```
 
-✅ Requirements
+### Requirements
 Ansible 2.9+ (or later)
 RHEL/CentOS-based systems with yum package manager
 sudo privileges on target nodes
 
-📝 Notes
+### Notes
 ```yaml
 Handlers are only triggered if the related task causes a change.
 The systemd module is used for MariaDB to ensure service compatibility on systemd-based systems.
 Modify the playbook if you want to support other distributions (e.g., use apt for Debian/Ubuntu).
 ```
-
-🛡️ License
-MIT License. See LICENSE file for details.
