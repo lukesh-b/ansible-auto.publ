@@ -4,7 +4,7 @@ Welcome to the **`ansible-auto.publ`** repository! 🎉
 
 This repository is **public** and serves as a central place for showcasing some of the core Ansible automation projects. 
 
-## 🚀 **Repository Overview**
+## **Repository Overview**
 
 In this public repository, you'll find the following:
 
